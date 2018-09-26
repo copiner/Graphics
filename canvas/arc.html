@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+  </head>
+  <body>
+
+    <canvas id="drawing" width="600" height="600">a drawing of something.</canvas>
+    <script type="text/javascript">
+
+     
+      var drawing = document.querySelector("#drawing");
+
+      if(drawing.getContext){
+      var ctx = drawing.getContext("2d");
+      ctx.lineWidth = 10;
+      ctx.strokeStyle = "dodgerblue";
+      
+      ctx.arc(300,300,200,0,Math.PI,false);
+      ctx.closePath();
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.fillStyle = "aquamarine";
+      ctx.arc(300,300,100,0,Math.PI*2,false);
+      ctx.fill();
+      }
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta chartset="UTF-8" />
+    <title>clock</title>
+  </head>
+  <body>
+    <canvas id="drawing" width="600" height="600">clock</canvas>
+    <script type="text/javascript">
+      var drawing = document.querySelector("#drawing");
+
+      if(drawing.getContext){
+      var ctx = drawing.getContext("2d");
+      ctx.beginPath();
+
+      ctx.arc(300,300,99,2*MATH.PI, false);
+      
+//      ctx.closePath();
+      ctx.arc(300,300,94,2*MATH.PI, false);
+
+      
+      }
+      </script>
+  </body>
+</html>

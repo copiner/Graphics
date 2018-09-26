@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+  </head>
+  <body>
+    <div id="icon"></div>
+
+    <canvas id="drawing" width="400" height="400">a drawing of something.</canvas>
+    <script type="text/javascript">
+
+     
+      var drawing = document.querySelector("#drawing");
+      var icon = document.querySelector("#icon");
+      if(drawing.getContext){
+        var ctx = drawing.getContext("2d");
+        ctx.lineWidth = 10;
+        ctx.strokeStyle = "blue";
+        ctx.moveTo(0,0);
+        ctx.lineTo(400,400);
+
+        ctx.stroke();
+      }
+      
+      var imgURI = drawing.toDataURL("image/png");
+      var image = document.createElement("img");
+      image.src = imgURI;
+      icon.appendChild(image);
+
+    </script>
+  </body>
+</html>

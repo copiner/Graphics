@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>draw image</title>
+  </head>
+  <body>
+    <img src="../images/admin.png" id="icon" hidden="hidden" />
+
+    <canvas id="drawing" width="400" height="400">a drawing of something.</canvas>
+    <script type="text/javascript">
+
+      window.onload = function(){
+      
+      var drawing = document.querySelector("#drawing");
+      var icon = document.querySelector("#icon");
+      if(drawing.getContext){
+      
+      var ctx = drawing.getContext("2d");
+      ctx.lineWidth = 10;
+      ctx.strokeStyle = "blue";
+      ctx.moveTo(0,0);
+      ctx.strokeRect(0,0,400,400);
+
+      ctx.drawImage(icon,180,180);
+      }
+    }
+    </script>
+  </body>
+</html>

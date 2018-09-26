@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta chartset="UTF-8" />
+    <title>clock</title>
+  </head>
+  <body>
+    <canvas id="drawing" width="600" height="600">clock</canvas>
+    <script type="text/javascript">
+      var drawing = document.querySelector("#drawing");
+
+      if(drawing.getContext){
+      var ctx = drawing.getContext("2d");
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = "dodgerblue";
+      
+      ctx.beginPath();
+
+      ctx.arc(300,300,99,2*Math.PI, false);
+      ctx.moveTo(394,300);
+      
+      ctx.arc(300,300,94,2*Math.PI, false);
+      ctx.moveTo(300,300);
+
+      ctx.lineTo(300,215);
+
+      ctx.moveTo(300,300);
+      ctx.lineTo(235,300);
+
+      ctx.stroke();
+
+      ctx.font = "bold 14px Arial";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "Top";
+      ctx.fillText("12",300,215);
+      }
+      </script>
+  </body>
+</html>
